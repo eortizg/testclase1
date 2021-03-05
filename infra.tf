@@ -14,3 +14,18 @@ resource "azurerm_resource_group" "rgcompanybuprod" {
     Empresa = "${local.company}"
   }
 }
+
+resource "azurerm_storage_account" "stgprod" {
+  count = "${length(var.bussiness_units_short)}"
+  name                     = "stac${local.bussiness-unit-1-short}${local.production-short}"
+  resource_group_name      = "${azurerm_resource_group.rgcompanybuprod[count.index].name}"
+  location                 = "${azurerm_resource_group.rgcompanybuprod[count.index].location}"
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+
+  tags = {
+    Ambiente = "${local.production}"
+    Area = "${var.bussiness_units[count.index]}"
+    Empresa = "${local.company}"
+  }
+}
