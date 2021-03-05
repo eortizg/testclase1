@@ -17,7 +17,7 @@ resource "azurerm_resource_group" "rgcompanybuprod" {
 
 resource "azurerm_storage_account" "stgprod" {
   count = "${length(var.bussiness_units_short)}"
-  name                     = "stac${local.bussiness-unit-1-short}${local.production-short}"
+  name                     = "stac${var.bussiness_units_short[count.index]}${local.production-short}"
   resource_group_name      = "${azurerm_resource_group.rgcompanybuprod[count.index].name}"
   location                 = "${azurerm_resource_group.rgcompanybuprod[count.index].location}"
   account_tier             = "Standard"
