@@ -10,7 +10,7 @@ resource "azurerm_resource_group" "rgcompanybuprod" {
   location = "East US"
   tags = {
     Ambiente = "${local.production}"
-    Area = "${var.bussiness-unit-1}"
+    Area = "${var.bussiness_units[count.index]}"
     Empresa = "${local.company}"
   }
 }
