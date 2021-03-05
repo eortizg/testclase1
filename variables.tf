@@ -8,6 +8,16 @@ variable "mandatory_tag_keys" {
   ]
 }
 
+variable "mandatory_tag_values_default" {
+  type        = list
+  description = "List of mandatory tag keys used by policies 'addTagToRG','inheritTagFromRG','bulkAddTagsToRG','bulkInheritTagsFromRG'"
+  default = [
+    "Production",
+    "Cumplimiento",
+    "Contoso1"
+  ]
+}
+
 
 variable "bussiness_units" {
   type        = list

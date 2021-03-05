@@ -137,10 +137,10 @@ POLICY_RULE
         "tagValue": {
           "type": "String",
           "metadata": {
-            "displayName": "Tag Value '${var.mandatory_tag_value}'",
-            "description": "Value of the tag, such as '${var.mandatory_tag_value}'"
+            "displayName": "Tag Value '${var.mandatory_tag_values_default[count.index]}'",
+            "description": "Value of the tag, such as '${var.mandatory_tag_values_default[count.index]}'"
           },
-          "defaultValue": "'${var.mandatory_tag_value}'"
+          "defaultValue": "'${var.mandatory_tag_values_default[count.index]}'"
         }
   }
 PARAMETERS
