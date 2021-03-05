@@ -1,17 +1,17 @@
 
 resource "azurerm_resource_group" "rgdev" {
   name     = local.service-rg-dev
-  location = local.location
+  location = "East US"
 }
 
 resource "azurerm_resource_group" "rgprd" {
   name     = local.service-rg-prd
-  location = local.location
+  location = "East US"
 }
 
 resource "azurerm_app_service_plan" "plandev" {
   name                = "gestion${local.service-dev-enviroment}plan"
-  location            = local.location
+  location            = "East US"
   resource_group_name = "${azurerm_resource_group.rgdev.name}"
 
   sku {
@@ -22,7 +22,7 @@ resource "azurerm_app_service_plan" "plandev" {
 
 resource "azurerm_app_service_plan" "planprd" {
   name                = "gestion${local.service-prd-enviroment}plan"
-  location            = local.location
+  location            = "East US"
   resource_group_name = "${azurerm_resource_group.rgprd.name}"
 
   sku {
@@ -33,14 +33,14 @@ resource "azurerm_app_service_plan" "planprd" {
 
 resource "azurerm_app_service" "web_dev" {
   name                = "gestion${local.service-dev-enviroment}web"
-  location            = local.location
+  location            = "East US"
   resource_group_name = "${azurerm_resource_group.rgdev.name}"
   app_service_plan_id = "${azurerm_app_service_plan.plandev.id}"
 }
 
 resource "azurerm_app_service" "web_prd" {
   name                = "gestion${local.service-prd-enviroment}web"
-  location            = local.location
+  location            = "East US"
   resource_group_name = "${azurerm_resource_group.rgprd.name}"
   app_service_plan_id = "${azurerm_app_service_plan.planprd.id}"
 }
@@ -48,7 +48,7 @@ resource "azurerm_app_service" "web_prd" {
 resource "azurerm_virtual_network" "dev" {
   name                = "devvnet"
   address_space       = ["10.0.0.0/16"]
-  location            = local.location
+  location            = "East US"
   resource_group_name = "${azurerm_resource_group.rgdev.name}"
 }
 
@@ -62,7 +62,7 @@ resource "azurerm_subnet" "dev" {
 resource "azurerm_virtual_network" "prd" {
   name                = "prdvnet"
   address_space       = ["10.0.0.0/16"]
-  location            = local.location
+  location            = "East US"
   resource_group_name = "${azurerm_resource_group.rgprd.name}"
 }
 
