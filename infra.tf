@@ -48,8 +48,8 @@ resource "azurerm_network_security_group" "secgrouppubprod" {
 resource "azurerm_virtual_network" "vnprod" {
   count = "${length(var.bussiness_units_short)}"
   name                = "${var.bussiness_units_short[count.index]}${local.production-short}virtualNetwork"
-  location            = azurerm_resource_group.azurerm_resource_group.rgcompanybuprod[count.index].location
-  resource_group_name = azurerm_resource_group.azurerm_resource_group.rgcompanybuprod[count.index].name
+  location            = azurerm_resource_group.rgcompanybuprod[count.index].location
+  resource_group_name = azurerm_resource_group.rgcompanybuprod[count.index].name
   address_space       = ["10.0.0.0/16"]
   dns_servers         = ["10.0.0.4", "10.0.0.5"]
 
