@@ -29,3 +29,32 @@ resource "azurerm_storage_account" "stgprod" {
     Empresa = "${local.company}"
   }
 }
+
+#Definiendo las redes
+#Public Sub net
+resource "azurerm_network_security_group" "secgrouppubprod" {
+  count = "${length(var.bussiness_units_short)}"
+  name                = "${var.bussiness_units_short[count.index]}pub${local.production-short}SecutiryGroup"#  "acceptanceTestSecurityGroup1"
+  location            = azurerm_resource_group.rgcompanybuprod[count.index].location
+  resource_group_name = azurerm_resource_group.rgcompanybuprod[count.index].name
+
+  tags = {
+    Ambiente = "${local.production}"
+    Area = "${var.bussiness_units[count.index]}"
+    Empresa = "${local.company}"
+  }
+}
+
+resource "azurerm_network_ddos_protection_plan" "ddospubprod" {
+  count = "${length(var.bussiness_units_short)}"
+  name                = "${var.bussiness_units_short[count.index]}pub${local.production-short}Ddos"
+  location            = azurerm_resource_group.rgcompanybuprod[count.index].location
+  resource_group_name = azurerm_resource_group.rgcompanybuprod[count.index].name
+
+  tags = {
+    Ambiente = "${local.production}"
+    Area = "${var.bussiness_units[count.index]}"
+    Empresa = "${local.company}"
+  }
+}
+
