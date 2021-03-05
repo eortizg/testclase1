@@ -16,7 +16,7 @@ locals {
     bussiness-unit-3-short = "usrn"
     bussiness-unit-4-short = "prov"
     #ambientes
-    development = "Desarrollo"
+    development = "Development"
     production = "Production"
 
     development-short = "dev"
