@@ -31,3 +31,15 @@ variable "bussiness_units_short" {
     "prov"
   ]
 }
+
+variable "bussiness_units_short" {
+  type        = list
+  description = "List of Business units short for company"
+  default = [
+    "cupl",
+    "comp",
+    "usrn",
+    "prov"
+  ]
+}
+
