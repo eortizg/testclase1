@@ -89,7 +89,7 @@ resource "azurerm_policy_definition" "addTagToRG" {
   description  = "Adds the mandatory tag key ${var.mandatory_tag_keys[count.index]} when any resource group missing this tag is created or updated. \nExisting resource groups can be remediated by triggering a remediation task.\nIf the tag exists with a different value it will not be changed."
   metadata = <<METADATA
     {
-    "category": "${var.policy_definition_category}",
+    "category": "RULES",
     "version" : "1.0.0"
     }
 METADATA
