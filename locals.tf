@@ -18,5 +18,9 @@ locals {
     #ambientes
     development = "Desarrollo"
     production = "Production"
+
+    development-short = "dev"
+    production-short = "prod"
+
 }
 
