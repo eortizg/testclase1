@@ -21,6 +21,12 @@ locals {
 
     development-short = "dev"
     production-short = "prod"
+    service-location = "Brazil South"
+    
+    service-rg-dev = "gp-dev-rg"
+    service-rg-prd = "gp-prd-rg"
+    service-dev-enviroment = "dev"
+    service-prd-enviroment = "prd"
 
 }
 
