@@ -25,7 +25,7 @@ variable "bussiness_units_short" {
   type        = list
   description = "List of Business units short for company"
   default = [
-    "cupl",
+    "cupl2",
     "comp",
     "usrn",
     "prov"
