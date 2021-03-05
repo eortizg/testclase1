@@ -3,7 +3,7 @@ provider "azurerm" {
   features {}
 }
 resource "azurerm_resource_group" "RGcompanyComplianceDev" {
-  name     = "RG-${local.bussiness-unit-1}-${local.development}"
+  name     = "RG${local.bussiness-unit-1-short}${local.development}"
   location = "East US"
   tags = {
     Ambiente = "${local.development}"
@@ -12,7 +12,7 @@ resource "azurerm_resource_group" "RGcompanyComplianceDev" {
   }
 }
 resource "azurerm_storage_account" "stgcompanyComplianceDev" {
-  name                     = "STAC-${local.bussiness-unit-1}-${local.development}"
+  name                     = "STAC${local.bussiness-unit-1-short}${local.development}"
   resource_group_name      = "${azurerm_resource_group.RGcompanyComplianceDev.name}"
   location                 = "${azurerm_resource_group.RGcompanyComplianceDev.location}"
   account_tier             = "Standard"
