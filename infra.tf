@@ -5,7 +5,7 @@ provider "azurerm" {
 
 #Compliance Landing Zone For company, Production 
 resource "azurerm_resource_group" "rgcompanybuprod" {
-  count = length(var.bussiness_units)
+  count = "${length(var.bussiness_units_short)}"
   name     = "RG${var.bussiness_units_short[count.index]}${local.production-short}"
   location = "East US"
   tags = {
