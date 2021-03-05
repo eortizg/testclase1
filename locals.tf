@@ -11,10 +11,10 @@ locals {
     bussiness-unit-3 = "UsuariosDeNegocio"
     bussiness-unit-4 = "Proveedores"
 
-    bussiness-unit-1-short = "CUPL"
-    bussiness-unit-2-short = "COMP"
-    bussiness-unit-3-short = "USRN"
-    bussiness-unit-4-short = "PROV"
+    bussiness-unit-1-short = "cupl"
+    bussiness-unit-2-short = "comp"
+    bussiness-unit-3-short = "usrn"
+    bussiness-unit-4-short = "prov"
     #ambientes
     development = "Desarrollo"
     production = "Production"

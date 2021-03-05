@@ -12,7 +12,7 @@ resource "azurerm_resource_group" "rgcompanycompliancedev" {
   }
 }
 resource "azurerm_storage_account" "stgcompliancedev" {
-  name                     = "STAC${local.bussiness-unit-1-short}${local.development}"
+  name                     = "staC${local.bussiness-unit-1-short}${local.development}"
   resource_group_name      = "${azurerm_resource_group.rgcompanycompliancedev.name}"
   location                 = "${azurerm_resource_group.rgcompanycompliancedev.location}"
   account_tier             = "Standard"
