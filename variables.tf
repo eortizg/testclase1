@@ -33,15 +33,4 @@ variable "bussiness_units_short" {
 }
 
 
-variable "mandatory_tag_keys" {
-  type        = list
-  description = "List of mandatory tag keys used by policies 'addTagToRG','inheritTagFromRG','bulkAddTagsToRG','bulkInheritTagsFromRG'"
-  default = [
-    "Application",
-    "CostCentre",
-    "Environment",
-    "ManagedBy",
-    "OwnedBy",
-    "SupportBy"
-  ]
-}
+
