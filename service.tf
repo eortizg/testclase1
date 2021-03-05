@@ -32,7 +32,7 @@ resource "azurerm_app_service_plan" "planprd" {
 }
 
 resource "azurerm_app_service" "web_dev" {
-  name                = "gestion${local.service-dev-enviroment}web"
+  name                = "asdx12gestion${local.service-dev-enviroment}web"
   location            = "East US"
   resource_group_name = "${azurerm_resource_group.rgdev.name}"
   app_service_plan_id = "${azurerm_app_service_plan.plandev.id}"
